@@ -12,6 +12,8 @@
 		A757F87C1C4597CC00310EF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A757F87A1C4597CC00310EF1 /* Main.storyboard */; };
 		A757F87E1C4597CC00310EF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A757F87D1C4597CC00310EF1 /* Assets.xcassets */; };
 		A757F8811C4597CC00310EF1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A757F87F1C4597CC00310EF1 /* LaunchScreen.storyboard */; };
+		A757F8891C4597F200310EF1 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = A757F8881C4597F200310EF1 /* background.png */; };
+		A757F88B1C4597F700310EF1 /* music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A757F88A1C4597F700310EF1 /* music.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		A757F87D1C4597CC00310EF1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A757F8801C4597CC00310EF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A757F8821C4597CC00310EF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A757F8881C4597F200310EF1 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		A757F88A1C4597F700310EF1 /* music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = music.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,9 +58,11 @@
 		A757F8751C4597CC00310EF1 /* MusicPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				A757F8881C4597F200310EF1 /* background.png */,
 				A757F8761C4597CC00310EF1 /* AppDelegate.swift */,
 				A757F8781C4597CC00310EF1 /* ViewController.swift */,
 				A757F87A1C4597CC00310EF1 /* Main.storyboard */,
+				A757F88A1C4597F700310EF1 /* music.mp3 */,
 				A757F87D1C4597CC00310EF1 /* Assets.xcassets */,
 				A757F87F1C4597CC00310EF1 /* LaunchScreen.storyboard */,
 				A757F8821C4597CC00310EF1 /* Info.plist */,
@@ -123,7 +129,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A757F88B1C4597F700310EF1 /* music.mp3 in Resources */,
 				A757F8811C4597CC00310EF1 /* LaunchScreen.storyboard in Resources */,
+				A757F8891C4597F200310EF1 /* background.png in Resources */,
 				A757F87E1C4597CC00310EF1 /* Assets.xcassets in Resources */,
 				A757F87C1C4597CC00310EF1 /* Main.storyboard in Resources */,
 			);
