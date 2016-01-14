@@ -14,6 +14,9 @@ class ViewController: UIViewController {
     //MARK : Variables
     var player: AVAudioPlayer = AVAudioPlayer()
     var isPlaying = false
+    var updater : CADisplayLink! = nil
+    
+    
     @IBOutlet var musicSlider: UISlider!
     @IBOutlet var volumeSlider: UISlider!
     
@@ -27,25 +30,35 @@ class ViewController: UIViewController {
         //If music is playing, pause it
         if isPlaying{
             player.pause()
-            //isPlaying = false
+            isPlaying = false
             //If music is not playing, play it
         } else {
             player.play()
-            //isPlaying = true
+            isPlaying = true
         }
+        
+        updater = CADisplayLink(target: self, selector: Selector("trackAudio"))
+        updater.frameInterval = 1
+        updater.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSRunLoopCommonModes)
+        
     }
     
     @IBAction func stopMusic(sender: AnyObject) {
         player.stop()
     }
     @IBAction func musicSliderMoved(sender: AnyObject) {
+        player.currentTime = Double(musicSlider.value * Float(player.duration))
     }
     
     @IBAction func volumeSliderMoved(sender: AnyObject) {
         player.volume = volumeSlider.value
     }
     
+    func trackAudio(){
+        var normalizedTime = Float(player.currentTime / player.duration)
+        musicSlider.value = normalizedTime
     
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,7 +66,6 @@ class ViewController: UIViewController {
         
         //Instantiate the audio player
         do{
-            
             try player = AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("music", ofType: "mp3")!))
         } catch {
             print("Unable to load AVAudioPlayer")
