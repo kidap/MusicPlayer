@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     var player: AVAudioPlayer = AVAudioPlayer()
     var isPlaying = false
     var updater : CADisplayLink! = nil
+    @IBOutlet var musicTime: UILabel!
     
     
     @IBOutlet var musicSlider: UISlider!
@@ -57,6 +58,9 @@ class ViewController: UIViewController {
     func trackAudio(){
         var normalizedTime = Float(player.currentTime / player.duration)
         musicSlider.value = normalizedTime
+        
+        
+        musicTime.text = "\(round(player.currentTime*100)/100) / \(round(player.duration*100)/100)"
     
     }
     
@@ -67,6 +71,8 @@ class ViewController: UIViewController {
         //Instantiate the audio player
         do{
             try player = AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("music", ofType: "mp3")!))
+            musicSlider.value = 0
+            musicTime.text = "\(player.currentTime) / \(round(player.duration*100)/100)"
         } catch {
             print("Unable to load AVAudioPlayer")
         }

@@ -57,9 +57,16 @@
                                     <action selector="volumeSliderMoved:" destination="BYZ-38-t0r" eventType="valueChanged" id="fTB-vf-l7Y"/>
                                 </connections>
                             </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ye9-Ln-wXO">
+                                <rect key="frame" x="538" y="407" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Ye9-Ln-wXO" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="2Ra-UF-gTM"/>
                             <constraint firstItem="9Sc-lc-ged" firstAttribute="top" secondItem="R8e-gn-35N" secondAttribute="bottom" constant="40" id="2qW-fh-ixW"/>
                             <constraint firstItem="9Sc-lc-ged" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9tV-xY-Xhj"/>
                             <constraint firstItem="tcp-8Y-3Wc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Pcy-UM-uIt"/>
@@ -71,11 +78,13 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="6IC-6K-dm6" secondAttribute="bottom" id="erN-Th-O3a"/>
                             <constraint firstItem="R8e-gn-35N" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="gIm-oU-12N"/>
                             <constraint firstItem="R8e-gn-35N" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ics-QD-hwd"/>
+                            <constraint firstItem="R8e-gn-35N" firstAttribute="top" secondItem="Ye9-Ln-wXO" secondAttribute="bottom" constant="8" id="n21-Z4-SRb"/>
                             <constraint firstItem="6IC-6K-dm6" firstAttribute="top" secondItem="9Sc-lc-ged" secondAttribute="bottom" constant="20" id="rLb-UX-dRl"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="musicSlider" destination="R8e-gn-35N" id="hSR-Mn-088"/>
+                        <outlet property="musicTime" destination="Ye9-Ln-wXO" id="79w-do-kwS"/>
                         <outlet property="playPauseButton" destination="NbU-N1-kK8" id="DNZ-Fx-gdI"/>
                         <outlet property="volumeSlider" destination="9Sc-lc-ged" id="yBM-61-wIJ"/>
                     </connections>
