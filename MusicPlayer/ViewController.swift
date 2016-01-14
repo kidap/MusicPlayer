@@ -46,6 +46,7 @@ class ViewController: UIViewController {
     
     @IBAction func stopMusic(sender: AnyObject) {
         player.stop()
+        instantiatePlayer()
     }
     @IBAction func musicSliderMoved(sender: AnyObject) {
         player.currentTime = Double(musicSlider.value * Float(player.duration))
@@ -63,19 +64,23 @@ class ViewController: UIViewController {
         musicTime.text = "\(round(player.currentTime*100)/100) / \(round(player.duration*100)/100)"
     
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
+    func instantiatePlayer(){
         //Instantiate the audio player
         do{
             try player = AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("music", ofType: "mp3")!))
+            isPlaying = false
             musicSlider.value = 0
             musicTime.text = "\(player.currentTime) / \(round(player.duration*100)/100)"
         } catch {
             print("Unable to load AVAudioPlayer")
         }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        
+        instantiatePlayer()
         
     }
     
